@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Course Studio</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brandmark">V<span>•</span></div>
+      <div class="brandcopy"><strong>Video Course Studio</strong><span>Make training videos in your audience's language</span></div>
+      <div class="topbadge">LOCAL PROTOTYPE</div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">VOICE + VISUALS + SUBTITLES</div>
+        <h1>One course idea.<br><em>Every audience's language.</em></h1>
+        <p>Build a scene-by-scene training video with a matching narrator, visual points, optional images and subtitles. Export a separate MP4 for each language.</p>
+        <div class="hero-steps"><span>01 Write</span><i></i><span>02 Preview voice</span><i></i><span>03 Render video</span></div>
+        <a class="hero-start" href="#new-topic-heading">Start a new topic ↓</a>
+      </section>
+
+      <section class="workspace topic-workspace" aria-labelledby="new-topic-heading">
+        <div class="section-head"><div><span class="section-kicker">START A NEW VIDEO</span><h2 id="new-topic-heading">Turn a topic into a course plan</h2></div></div>
+        <p class="muted">Enter the subject and who should learn it. Studio will save an editable chapter storyboard. You will then write and review the narration, examples and visuals before rendering.</p>
+        <form id="topic-form" class="topic-form">
+          <label class="field"><span>Topic</span><input id="topic-name" maxlength="85" required placeholder="Example: Cybersecurity basics for small businesses"></label>
+          <label class="field"><span>Audience</span><input id="topic-audience" maxlength="85" required placeholder="Example: small business owners"></label>
+          <label class="field"><span>What should they be able to do afterward?</span><input id="topic-goal" maxlength="85" required placeholder="Example: protect accounts and spot common scams"></label>
+          <label class="field"><span>Video language</span><select id="topic-language"></select></label>
+          <label class="field wide"><span>Lesson sections · one per line, up to 8 (optional)</span><textarea id="topic-sections" rows="4" placeholder="Example: Passwords and MFA&#10;Phishing messages&#10;Safe software updates"></textarea></label>
+          <div class="topic-actions"><button class="primary" type="submit">Create course storyboard →</button><span class="muted">Planning template only. It does not generate a finished script or video.</span></div>
+          <p id="topic-status" class="topic-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="workspace">
+        <div class="section-head"><div><span class="section-kicker">PROJECT SETUP</span><h2>Choose your output language</h2></div><span class="muted">Each language keeps its own editable script.</span></div>
+        <div class="library-bar">
+          <label class="field"><span>Saved courses</span><select id="saved-projects"><option value="">New course</option></select></label>
+          <button id="new-project" class="secondary" type="button">New</button>
+          <button id="save-project" class="secondary" type="button">Save course</button>
+          <span id="save-state" class="muted">Draft is stored in this browser until saved.</span>
+        </div>
+        <div id="languages" class="language-grid" role="group" aria-label="Output language"></div>
+        <div class="settings-grid">
+          <label class="field"><span>Course name</span><input id="course-name" maxlength="100" value="My Training Course" placeholder="Shared name for every version"></label>
+          <label class="field"><span>Course title</span><input id="project-title" maxlength="100" value="My Training Course" placeholder="Name your video"></label>
+          <label class="field"><span>Narrator</span><select id="voice"></select></label>
+        </div>
+        <p class="hint">For a saved course, a new language keeps the chapter structure but starts with empty narration and visual points. Rewrite and review each language; Studio does not translate it automatically.</p>
+      </section>
+
+      <section class="workspace scenes-workspace">
+        <div class="section-head"><div><span class="section-kicker">STORYBOARD</span><h2>Chapter and scene editor</h2></div><button id="add-chapter" class="secondary">+ Add chapter</button></div>
+        <div id="chapters"></div>
+        <div class="editor-footer"><span><span id="chapter-count">1 chapter</span> · <span id="scene-count">3 scenes</span></span><span>Up to 24 chapters and 120 scenes per video</span></div>
+        <label class="review-check"><input id="reviewed" type="checkbox"><span>I reviewed this language's script, visuals and voice choice for accuracy.</span></label>
+      </section>
+
+      <section class="build-card">
+        <div><span class="section-kicker">EXPORT</span><h2>Ready to see it move?</h2><p>Render a 1920 × 1080 MP4 with the selected voice and timed subtitles.</p></div>
+        <div class="build-actions"><button id="render" class="primary">Render this language →</button><button id="render-all" class="secondary">Render reviewed languages</button></div>
+      </section>
+      <section id="result" class="result" hidden aria-live="polite"></section>
+      <section class="workspace">
+        <div class="section-head"><div><span class="section-kicker">LIBRARY</span><h2>Recent language renders</h2></div></div>
+        <div id="render-history" class="render-history"><p class="muted">No language batches rendered yet.</p></div>
+      </section>
+    </main>
+
+    <footer>Video Course Studio · Your project and renders stay on this computer. Voice preview and synthesis use a network speech service.</footer>
+  </div>
+</body>
+</html>

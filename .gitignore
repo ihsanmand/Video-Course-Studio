@@ -1,0 +1,49 @@
+# Python environments, caches, and test artifacts
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Generated courses, uploaded assets, and private local records
+jobs/
+output/
+projects/
+uploads/
+
+# Local configuration, secrets, and credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+credentials*.json
+secrets*.json
+
+# Build outputs, local databases, and logs
+build/
+dist/
+*.egg-info/
+*.sqlite
+*.sqlite3
+*.db
+*.log
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini

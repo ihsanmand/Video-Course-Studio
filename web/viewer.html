@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choose your course language</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/viewer.js" defer></script>
+</head>
+<body>
+  <div class="shell viewer-shell">
+    <header class="topbar">
+      <div class="brandmark">V<span>•</span></div>
+      <div class="brandcopy"><strong>Video Course Studio</strong><span>Language viewer</span></div>
+      <a class="viewer-back" href="/">← Back to editor</a>
+    </header>
+    <main class="viewer-main">
+      <span class="section-kicker">MULTILINGUAL COURSE</span>
+      <h1 id="viewer-title">Choose your language</h1>
+      <p id="viewer-subtitle" class="muted">Select a language to watch the course with matching narration and subtitles.</p>
+      <div id="viewer-languages" class="language-grid" role="group" aria-label="Video language"></div>
+      <section class="viewer-player">
+        <div class="viewer-player-top"><h2 id="current-language">Loading...</h2><span id="runtime" class="muted"></span></div>
+        <video id="course-video" controls playsinline preload="metadata"></video>
+        <nav id="viewer-chapters" class="viewer-chapters" aria-label="Course chapters" hidden></nav>
+        <div id="viewer-downloads" class="download-row"></div>
+      </section>
+      <p class="viewer-note">This viewer works on the computer running Video Course Studio. For public access, publish each language's MP4 or host a separate viewer page.</p>
+    </main>
+  </div>
+</body>
+</html>
