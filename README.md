@@ -2,6 +2,17 @@
 
 Video Course Studio is a **local prototype** for making narrated, 1920 × 1080 training videos. It currently supports English (US), Urdu (Pakistan), German (Germany), and Arabic (Saudi Arabia), with male and female voice choices. Each reviewed language produces a **separate MP4** with burned-in captions, an SRT download, and WebVTT captions for the local viewer.
 
+## Interface preview
+
+![Video Course Studio home screen with the multilingual course planner](docs/images/video-course-studio-home.png)
+
+<details>
+<summary><strong>View the language and storyboard editor</strong></summary>
+
+![Video Course Studio language selection and chapter-and-scene editor](docs/images/video-course-studio-editor.png)
+
+</details>
+
 ## Start
 
 Use Python 3.12 or newer. On a fresh checkout, install the dependencies first:
